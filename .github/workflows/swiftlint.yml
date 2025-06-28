@@ -18,6 +18,9 @@ jobs:
 
       - name: Run SwiftLint
         run: swiftlint --strict
+
+      - name: Resolve Dependencies
+        run: swift package resolve
       
       - name: Run Unit Tests
         run: xcodebuild test -scheme 'DIEngine' -destination 'platform=iOS Simulator,name=iPhone 16' -enableCodeCoverage YES
