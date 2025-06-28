@@ -18,6 +18,9 @@ jobs:
 
       - name: Run SwiftLint
         run: swiftlint --strict
+        
+      - name: Clean build
+        run: xcodebuild clean -scheme 'DIEngine'
       
       - name: Run Unit Tests
-        run: xcodebuild test -scheme 'DIEngine' -destination 'platform=iOS Simulator,name=iPhone 16' -enableCodeCoverage YES
+        run: xcodebuild test -scheme 'DIEngine' -destination 'platform=iOS Simulator,name=iPhone 16' -enableCodeCoverage YES -allowProvisioningUpdates
